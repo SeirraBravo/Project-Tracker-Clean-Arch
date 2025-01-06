@@ -12,6 +12,11 @@ namespace ProjectTracker.Application
     {
         public static void ConfigureApplicationServices(this IServiceCollection services)
         {
+            //var assemblies = new Assembly[]
+            //{
+            //    Assembly.Load("ProjectTarcker.Domain"),
+            //    Assembly.Load("ProjectTarcker.Infrastructure")
+            //};
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
     }
