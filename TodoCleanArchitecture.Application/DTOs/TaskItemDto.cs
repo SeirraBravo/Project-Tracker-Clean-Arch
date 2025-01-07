@@ -7,8 +7,11 @@ using ProjectTracker.Application.DTOs.Common;
 
 namespace ProjectTracker.Application.DTOs
 {
-    public class TaskItemDto:BaseDto
+    public class TaskItemDto : BaseDto
     {
         public string Title { get; set; }
+        public ProjectDto? Project { get; set; }
+
+        public int ProjectId { get; set; }
     }
 }

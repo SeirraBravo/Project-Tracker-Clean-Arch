@@ -8,10 +8,19 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TodoCleanArchitecture.Domain\ProjectTracker.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\ProjectInfo\Handlers\Commands\" />
+    <Folder Include="Features\ProjectInfo\Requests\Commands\" />
+    <Folder Include="Features\TaskDetails\Handlers\Commands\" />
+    <Folder Include="Features\TaskDetails\Requests\Commands\" />
   </ItemGroup>
 
 </Project>

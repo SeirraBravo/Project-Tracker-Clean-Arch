@@ -10,14 +10,12 @@ namespace ProjectTracker.Application
 {
     public static class ApplicationServicesRergistration
     {
-        public static void ConfigureApplicationServices(this IServiceCollection services)
+        public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services, MediatRServiceConfiguration configuration)
         {
-            //var assemblies = new Assembly[]
-            //{
-            //    Assembly.Load("ProjectTarcker.Domain"),
-            //    Assembly.Load("ProjectTarcker.Infrastructure")
-            //};
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddMediatR(configuration);
+            return services;
+
         }
     }
 }
