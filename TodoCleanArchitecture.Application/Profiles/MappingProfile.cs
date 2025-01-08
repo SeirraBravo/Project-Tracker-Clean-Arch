@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using ProjectTracker.Application.DTOs;
+using ProjectTracker.Application.DTOs.RequestDtos.Projects;
+using ProjectTracker.Application.DTOs.RequestDtos.Tasks;
 using ProjectTracker.Domain.Data;
 
 namespace ProjectTracker.Application.Profiles
@@ -14,8 +16,8 @@ namespace ProjectTracker.Application.Profiles
     {
         public MappingProfile()
         {
-            CreateMap<Project,ProjectDto>().ReverseMap();
-            CreateMap<TaskItem,TaskItemDto>().ReverseMap();
+            CreateMap<Project,ProjectRequestDto>().ReverseMap();
+            CreateMap<TaskItem,TaskItemRequestDto>().ReverseMap();
         }
     }
 }

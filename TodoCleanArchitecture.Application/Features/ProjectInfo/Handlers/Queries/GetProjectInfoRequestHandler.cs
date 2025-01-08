@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
-using ProjectTracker.Application.DTOs;
+using ProjectTracker.Application.DTOs.RequestDtos.Projects;
 using ProjectTracker.Application.Features.ProjectInfo.Requests.Queries;
 using ProjectTracker.Application.Persistance.Contracts;
 
 namespace ProjectTracker.Application.Features.ProjectInfo.Handlers.Queries
 {
-    public class GetProjectInfoRequestHandler : IRequestHandler<GetProjectInfoRequest, ProjectDto>
+    public class GetProjectInfoRequestHandler : IRequestHandler<GetProjectInfoRequest, ProjectRequestDto>
     {
         private IProjectRepository _projectRepository;
         private IMapper _mapper;
@@ -21,10 +21,10 @@ namespace ProjectTracker.Application.Features.ProjectInfo.Handlers.Queries
             _projectRepository = projectRepository;
             _mapper = mapper;
         }
-        public async Task<ProjectDto> Handle(GetProjectInfoRequest request, CancellationToken cancellationToken)
+        public async Task<ProjectRequestDto> Handle(GetProjectInfoRequest request, CancellationToken cancellationToken)
         {
             var project = await _projectRepository.Get(request.id);
-            return _mapper.Map<ProjectDto>(project);
+            return _mapper.Map<ProjectRequestDto>(project);
         }
     }
 }

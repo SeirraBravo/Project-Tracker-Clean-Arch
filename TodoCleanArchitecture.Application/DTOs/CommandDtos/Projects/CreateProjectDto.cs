@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProjectTracker.Application.DTOs.Common;
-using ProjectTracker.Domain.Data;
 
-namespace ProjectTracker.Application.DTOs
+namespace ProjectTracker.Application.DTOs.CommandDtos.Projects
 {
-    public class ProjectDto:BaseDto
+    public class CreateProjectDto
     {
         public int Title { get; set; }
         public string? Description { get; set; }
-        public ICollection<TaskItemDto> Tasks { get; set; }
+        public string ProjectType { get; set; }
+        public float? CostEstimated { get; set; }
+        public DateTime? StartDate { get; set; }
     }
 }
