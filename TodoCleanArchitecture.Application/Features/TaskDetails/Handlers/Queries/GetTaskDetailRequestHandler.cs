@@ -1,31 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
+using Dapper;
 using ProjectTracker.Application.DTOs.RequestDtos.Tasks;
 using ProjectTracker.Application.Features.TaskDetails.Requests.Queries;
 using ProjectTracker.Application.Persistance.Contracts;
+using ProjectTracker.Application.Abstractions;
+using ProjectTracker.Domain.Data;
 
 namespace ProjectTracker.Application.Features.TaskDetails.Handlers.Queries
 {
-    public class GetTaskDetailRequestHandler : IRequestHandler<GetTaskDetailRequest, TaskItemRequestDto>
+    public class GetTaskDetailRequestHandler : IRequestHandler<GetTaskDetailRequest, IList<TaskItemRequestDto>>
     {
-        private ITaskItemRepository _taskItemRepository;
-        private IMapper _mapper;
-        public GetTaskDetailRequestHandler(ITaskItemRepository taskItemRepository, IMapper mapper) 
+        private readonly IMapper _mapper;
+        private readonly ISqlConnectionFactory _connectionFactory;
+
+        public GetTaskDetailRequestHandler(ISqlConnectionFactory connectionFactory, IMapper mapper)
         {
-            _taskItemRepository = taskItemRepository;
             _mapper = mapper;
-            
+            _connectionFactory = connectionFactory;
+
         }
 
-        public async Task<TaskItemRequestDto> Handle(GetTaskDetailRequest request, CancellationToken cancellationToken)
+        public async Task<IList<TaskItemRequestDto>> Handle(GetTaskDetailRequest request, CancellationToken cancellationToken)
         {
-            var taskLists = await _taskItemRepository.Get(request.ProjectId);
-            return _mapper.Map<TaskItemRequestDto>(taskLists);
+            using var connection = _connectionFactory.CreateConnection();
+            int projectId = request.ProjectId;
+            var sql = "SELECT * FROM TaskItem WHERE ProjectId=@projectId";
+            var taskList = await connection.QueryAsync<TaskItem>(sql);
+            return _mapper.Map<TaskItemRequestDto[]>(taskList);
         }
     }
 }

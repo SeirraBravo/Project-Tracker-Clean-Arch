@@ -1,29 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
+using Dapper;
 using ProjectTracker.Application.DTOs.RequestDtos.Projects;
 using ProjectTracker.Application.Features.ProjectInfo.Requests.Queries;
-using ProjectTracker.Application.Persistance.Contracts;
+using ProjectTracker.Application.Abstractions;
+using ProjectTracker.Domain.Data;
 
 namespace ProjectTracker.Application.Features.ProjectInfo.Handlers.Queries
 {
-    public class GetProjectInfoRequestHandler : IRequestHandler<GetProjectInfoRequest, ProjectRequestDto>
+    public class GetProjectInfoRequestHandler : IRequestHandler<GetProjectInfoRequest,ProjectRequestDto>
     {
-        private IProjectRepository _projectRepository;
         private IMapper _mapper;
+        private readonly ISqlConnectionFactory _connectionFactory;
 
-        public GetProjectInfoRequestHandler(IProjectRepository projectRepository, IMapper mapper)
+        public GetProjectInfoRequestHandler( IMapper mapper, ISqlConnectionFactory connectionFactory)
         {
-            _projectRepository = projectRepository;
             _mapper = mapper;
+            _connectionFactory = connectionFactory;
         }
         public async Task<ProjectRequestDto> Handle(GetProjectInfoRequest request, CancellationToken cancellationToken)
         {
-            var project = await _projectRepository.Get(request.id);
+            using var connection = _connectionFactory.CreateConnection();
+            int id = request.id;
+            var sql = "SELECT * FROM Project WHERE id=@id";
+            var project= await connection.QueryAsync<Project>(sql);
             return _mapper.Map<ProjectRequestDto>(project);
         }
     }

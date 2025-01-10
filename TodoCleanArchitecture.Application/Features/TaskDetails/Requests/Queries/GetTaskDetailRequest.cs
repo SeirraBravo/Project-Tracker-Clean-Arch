@@ -8,7 +8,7 @@ using ProjectTracker.Application.DTOs.RequestDtos.Tasks;
 
 namespace ProjectTracker.Application.Features.TaskDetails.Requests.Queries
 {
-    public class GetTaskDetailRequest:IRequest<TaskItemRequestDto>
+    public class GetTaskDetailRequest:IRequest<IList<TaskItemRequestDto>>
     {
         public int ProjectId { get; set; }
     }
