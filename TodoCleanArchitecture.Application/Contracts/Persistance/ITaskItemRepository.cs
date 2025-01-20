@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using ProjectTracker.Application.DTOs.RequestDtos.Tasks;
 using ProjectTracker.Domain.Data;
 
-namespace ProjectTracker.Application.Persistance.Contracts
+namespace ProjectTracker.Application.Contracts.Persistance
 {
-    public interface ITaskItemRepository:IGenericRepository<TaskItem>
+    public interface ITaskItemRepository : IGenericRepository<TaskItem>
     {
-     
+
     }
 }

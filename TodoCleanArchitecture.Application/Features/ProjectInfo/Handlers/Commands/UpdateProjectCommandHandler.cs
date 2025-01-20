@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
+using ProjectTracker.Application.Contracts.Persistance;
 using ProjectTracker.Application.Features.ProjectInfo.Requests.Commands;
-using ProjectTracker.Application.Persistance.Contracts;
 using ProjectTracker.Domain.Data;
 
 namespace ProjectTracker.Application.Features.ProjectInfo.Handlers.Commands

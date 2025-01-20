@@ -3,7 +3,6 @@ using MediatR;
 using Dapper;
 using ProjectTracker.Application.DTOs.RequestDtos.Tasks;
 using ProjectTracker.Application.Features.TaskDetails.Requests.Queries;
-using ProjectTracker.Application.Persistance.Contracts;
 using ProjectTracker.Application.Abstractions;
 using ProjectTracker.Domain.Data;
 
@@ -21,6 +20,12 @@ namespace ProjectTracker.Application.Features.TaskDetails.Handlers.Queries
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async Task<IList<TaskItemRequestDto>> Handle(GetTaskDetailRequest request, CancellationToken cancellationToken)
         {
             using var connection = _connectionFactory.CreateConnection();

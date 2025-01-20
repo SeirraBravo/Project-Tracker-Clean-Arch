@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
+using ProjectTracker.Application.Contracts.Persistance;
 using ProjectTracker.Application.Features.TaskDetails.Requests.Commands;
-using ProjectTracker.Application.Persistance.Contracts;
 using ProjectTracker.Domain.Data;
 
 namespace ProjectTracker.Application.Features.TaskDetails.Handlers.Commands
@@ -23,6 +23,12 @@ namespace ProjectTracker.Application.Features.TaskDetails.Handlers.Commands
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async Task<int> Handle(CreateTaskCommand request, CancellationToken cancellationToken)
         {
             var newTask = _mapper.Map<TaskItem>(request.CreateTaskDto);

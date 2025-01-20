@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
+using ProjectTracker.Application.Contracts.Persistance;
 using ProjectTracker.Application.DTOs.CommandDtos.Projects.Validators;
+using ProjectTracker.Application.Exceptions;
 using ProjectTracker.Application.Features.ProjectInfo.Requests.Commands;
-using ProjectTracker.Application.Persistance.Contracts;
 using ProjectTracker.Domain.Data;
 
 namespace ProjectTracker.Application.Features.ProjectInfo.Handlers.Commands
@@ -25,10 +26,10 @@ namespace ProjectTracker.Application.Features.ProjectInfo.Handlers.Commands
         public async Task<int> Handle(CreateProjectCommand request, CancellationToken cancellationToken)
         {
             var validator = new ProjectValidator();
-            var validationStatus = validator.Validate(request.ProjectDto);
+            var validationStatus =await validator.ValidateAsync(request.ProjectDto);
             if (validationStatus.IsValid == false)
             {
-                throw new Exception();
+                throw new ValidationException(validationStatus);
             }
             else
             {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProjectTracker.Domain.Data;
 
-namespace ProjectTracker.Application.Persistance.Contracts
+namespace ProjectTracker.Application.Contracts.Persistance
 {
     public interface IProjectRepository : IGenericRepository<Project>
     {
