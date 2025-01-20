@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectTracker.Application.DTOs.Common
+namespace Application.DTOs.Common
 {
     public class BaseDto
     {

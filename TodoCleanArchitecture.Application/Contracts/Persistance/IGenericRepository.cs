@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectTracker.Application.Contracts.Persistance
+namespace Application.Contracts.Persistance
 {
     public interface IGenericRepository<T> where T : class
     {

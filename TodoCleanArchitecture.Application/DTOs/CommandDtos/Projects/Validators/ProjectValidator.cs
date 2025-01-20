@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 
-namespace ProjectTracker.Application.DTOs.CommandDtos.Projects.Validators
+namespace Application.DTOs.CommandDtos.Projects.Validators
 {
-    public class ProjectValidator:AbstractValidator<CreateProjectDto>
+    public class ProjectValidator : AbstractValidator<CreateProjectDto>
     {
         public ProjectValidator()
         {

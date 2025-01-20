@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProjectTracker.Application.DTOs.Common;
 
-namespace ProjectTracker.Application.DTOs.CommandDtos.Projects
+namespace Application.DTOs.CommandDtos.Projects
 {
     public class CreateProjectDto
     {

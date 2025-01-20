@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectTracker.Application.DTOs.Common;
+using Application.DTOs.Common;
 using ProjectTracker.Domain.Data;
 
-namespace ProjectTracker.Application.DTOs.RequestDtos.Projects
+namespace Application.DTOs.RequestDtos.Projects
 {
     public class ProjectRequestDto : BaseDto
     {

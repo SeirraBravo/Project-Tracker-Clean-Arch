@@ -4,10 +4,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.DTOs.RequestDtos.Projects;
+using Application.DTOs.RequestDtos.Tasks;
 using AutoMapper;
 using ProjectTracker.Application.DTOs;
-using ProjectTracker.Application.DTOs.RequestDtos.Projects;
-using ProjectTracker.Application.DTOs.RequestDtos.Tasks;
 using ProjectTracker.Domain.Data;
 
 namespace ProjectTracker.Application.Profiles

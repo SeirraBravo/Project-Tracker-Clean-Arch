@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectTracker.Application.Exceptions
+namespace Application.Exceptions
 {
     internal class BadRequestException : ApplicationException
     {

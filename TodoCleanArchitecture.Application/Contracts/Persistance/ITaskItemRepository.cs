@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ProjectTracker.Application.DTOs.RequestDtos.Tasks;
 using ProjectTracker.Domain.Data;
 
-namespace ProjectTracker.Application.Contracts.Persistance
+namespace Application.Contracts.Persistance
 {
     public interface ITaskItemRepository : IGenericRepository<TaskItem>
     {

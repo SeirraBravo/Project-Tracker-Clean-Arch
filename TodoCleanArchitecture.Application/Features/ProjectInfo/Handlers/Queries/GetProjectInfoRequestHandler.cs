@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using MediatR;
 using Dapper;
-using ProjectTracker.Application.DTOs.RequestDtos.Projects;
 using ProjectTracker.Application.Features.ProjectInfo.Requests.Queries;
-using ProjectTracker.Application.Abstractions;
 using ProjectTracker.Domain.Data;
+using ProjectTracker.Domain.Abstractions;
+using Application.DTOs.RequestDtos.Projects;
 
 namespace ProjectTracker.Application.Features.ProjectInfo.Handlers.Queries
 {

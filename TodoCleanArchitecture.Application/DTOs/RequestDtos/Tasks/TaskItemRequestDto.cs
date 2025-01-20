@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectTracker.Application.DTOs.Common;
+using Application.DTOs.Common;
 
-namespace ProjectTracker.Application.DTOs.RequestDtos.Tasks
+namespace Application.DTOs.RequestDtos.Tasks
 {
     public class TaskItemRequestDto : BaseDto
     {

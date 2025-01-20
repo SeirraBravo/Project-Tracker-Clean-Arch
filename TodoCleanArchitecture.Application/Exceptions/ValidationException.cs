@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation.Results;
 
-namespace ProjectTracker.Application.Exceptions
+namespace Application.Exceptions
 {
     internal class ValidationException : ApplicationException
     {
         public List<string> Errors { get; set; } = new List<string>();
         ///
-        public ValidationException( ValidationResult validationResult)
+        public ValidationException(ValidationResult validationResult)
         {
-            foreach(var error in validationResult.Errors)
+            foreach (var error in validationResult.Errors)
             {
                 Errors.Add(error.ErrorMessage);
             }
