@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TodoCleanArchitecture.Application\ProjectTracker.Application.csproj" />
+    <ProjectReference Include="..\TodoCleanArchitecture.Application\Application.csproj" />
   </ItemGroup>
 
 </Project>

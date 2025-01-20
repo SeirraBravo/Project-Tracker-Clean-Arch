@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TodoCleanArchitecture.Domain\ProjectTracker.Domain.csproj" />
+    <ProjectReference Include="..\TodoCleanArchitecture.Domain\Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

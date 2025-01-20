@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTracker.Domain", "TodoCleanArchitecture.Domain\ProjectTracker.Domain.csproj", "{7E58471A-E373-4BE0-8261-566A4DEB0FFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "TodoCleanArchitecture.Domain\Domain.csproj", "{7E58471A-E373-4BE0-8261-566A4DEB0FFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTracker.Infrastructure", "TodoCleanArchitecture.Infrastructure\ProjectTracker.Infrastructure.csproj", "{C1F2C95A-5893-4F72-BD05-967C907A6A33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "TodoCleanArchitecture.Infrastructure\Infrastructure.csproj", "{C1F2C95A-5893-4F72-BD05-967C907A6A33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTracker.Application", "TodoCleanArchitecture.Application\ProjectTracker.Application.csproj", "{1B875FE6-ADCA-44F1-A588-6158B0E04C8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "TodoCleanArchitecture.Application\Application.csproj", "{1B875FE6-ADCA-44F1-A588-6158B0E04C8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTracker.Persistance", "ProjectTracker.Persistance\ProjectTracker.Persistance.csproj", "{7F5DD242-0F0A-4880-8923-A5D52FF19482}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistance", "ProjectTracker.Persistance\Persistance.csproj", "{7F5DD242-0F0A-4880-8923-A5D52FF19482}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{1549E059-7A8B-46BD-B3A4-BC71FB1F27D5}"
 EndProject
